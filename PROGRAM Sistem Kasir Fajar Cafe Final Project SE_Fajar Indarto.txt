@@ -1,0 +1,71 @@
+PROGRAM Sistem Kasir Fajar Cafe
+
+Deklarasi
+STORE "menu1" with string "Hot Latte"
+STORE "menu2" with string "Iced Matcha"
+STORE "menu3" with string "Iced Americano"
+STORE "harga1" with number 20000
+STORE "harga2" with number 23000
+STORE "harga3" with number 17000
+READ "jumlah1" with number
+READ "jumlah2" with number
+READ "jumlah3" with number
+READ "kode_pesanan" with string
+READ "kode1" with string
+READ "kode2" with string
+READ "kode3" with string
+READ "total1" with number
+READ "total2" with number
+READ "total3" with number
+READ "total_harga" with number
+READ "Kembalian" with number
+
+Deskripsi
+PRINT "KODE MENU 		-- NAMA MENU 		-- HARGA MENU"
+PRINT "  kode1   		-- Hot Latte 		-- 20000"
+PRINT "  kode2   		-- Iced Matcha 		-- 23000"
+PRINT "  kode3   		-- Iced Americano 	-- 17000"	
+PRINT "Masukan pesanan dengan memilih kode diatas"
+PRINT "Masukan jumlah sesuai dengan banyak pesanan yang diinginkan"
+WRITE "kode _pesanan"
+READ "kode_pesanan"
+
+WHILE (kode_pesanan = true)
+IF "kode_pesanan" equal "kode1" then 
+	PRINT "Hot Latte"
+	PRINT "20000"
+	PRINT "Jumlah Pesanan" 
+	READ AND WRITE "jumlah1" 
+	STORE "total1" with calculate "harga1" multiplied by "jumlah1"
+ELSE IF "kode_pesanan" equal "kode2" then
+	PRINT "Iced Matcha"
+	PRINT "23000"
+	PRINT "Jumlah Pesanan" 
+	READ AND WRITE "jumlah2" 
+	STORE "total2" with calculate "harga1" multiplied by "jumlah2"
+ELSE IF "kode_pesanan" equal "kode3" then
+	PRINT "Iced Americano"
+	PRINT "17000"
+	PRINT "Jumlah Pesanan" 
+	READ AND WRITE "jumlah3" 
+	STORE "total3" with calculate "harga1" multiplied by "jumlah3"
+ELSE 
+	PRINT "Kode Salah"
+END IF
+DO (kode_pesanan = false)
+	WRITE "1" PRINT "Masukkan Kode Kembali" (kode_pesanan = true)
+	WRITE "2" PRINT "Cancel Pesanan" 
+END WHILE-DO
+
+STORE "total_harga" with calculate "harga1" plus "harga2" plus harga3"
+PRINT "total harga Pesanan : " from "total_harga"
+
+WRITE "pembayaran"
+WHILE ("pembayaran" < "total_harga")
+	PRINT "Pembayaran Tidak Diterima"
+DO
+	STORE "kembalian" with calculate "pembayaran" minus "total_harga"
+	PRINT "Pembayaran Diterima"
+END WHILE-DO
+END PROGRAM
+
