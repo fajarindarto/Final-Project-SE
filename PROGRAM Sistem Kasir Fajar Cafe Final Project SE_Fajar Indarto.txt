@@ -31,27 +31,27 @@ WRITE "kode _pesanan"
 READ "kode_pesanan"
 
 WHILE (kode_pesanan = true)
-IF "kode_pesanan" equal "kode1" then 
-	PRINT "Hot Latte"
-	PRINT "20000"
-	PRINT "Jumlah Pesanan" 
-	READ AND WRITE "jumlah1" 
-	STORE "total1" with calculate "harga1" multiplied by "jumlah1"
-ELSE IF "kode_pesanan" equal "kode2" then
-	PRINT "Iced Matcha"
-	PRINT "23000"
-	PRINT "Jumlah Pesanan" 
-	READ AND WRITE "jumlah2" 
-	STORE "total2" with calculate "harga1" multiplied by "jumlah2"
-ELSE IF "kode_pesanan" equal "kode3" then
-	PRINT "Iced Americano"
-	PRINT "17000"
-	PRINT "Jumlah Pesanan" 
-	READ AND WRITE "jumlah3" 
-	STORE "total3" with calculate "harga1" multiplied by "jumlah3"
-ELSE 
-	PRINT "Kode Salah"
-END IF
+	IF "kode_pesanan" equal "kode1" then 
+		PRINT "Hot Latte"
+		PRINT "20000"
+		PRINT "Jumlah Pesanan" 
+		READ AND WRITE "jumlah1" 
+		STORE "total1" with calculate "harga1" multiplied by "jumlah1"
+	ELSE IF "kode_pesanan" equal "kode2" then
+		PRINT "Iced Matcha"
+		PRINT "23000"
+		PRINT "Jumlah Pesanan" 
+		READ AND WRITE "jumlah2" 
+		STORE "total2" with calculate "harga1" multiplied by "jumlah2"
+	ELSE IF "kode_pesanan" equal "kode3" then
+		PRINT "Iced Americano"
+		PRINT "17000"
+		PRINT "Jumlah Pesanan" 
+		READ AND WRITE "jumlah3" 
+		STORE "total3" with calculate "harga1" multiplied by "jumlah3"
+	ELSE 
+		PRINT "Kode Salah"
+	END IF
 DO (kode_pesanan = false)
 	WRITE "1" PRINT "Masukkan Kode Kembali" (kode_pesanan = true)
 	WRITE "2" PRINT "Cancel Pesanan" 
